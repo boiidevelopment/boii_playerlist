@@ -1,0 +1,170 @@
+/*
+     ____   ____ _____ _____   _   _____  ________      ________ _      ____  _____  __  __ ______ _   _ _______ 
+    |  _ \ / __ \_   _|_   _| | | |  __ \|  ____\ \    / /  ____| |    / __ \|  __ \|  \/  |  ____| \ | |__   __|
+    | |_) | |  | || |   | |   | | | |  | | |__   \ \  / /| |__  | |   | |  | | |__) | \  / | |__  |  \| |  | |   
+    |  _ <| |  | || |   | |   | | | |  | |  __|   \ \/ / |  __| | |   | |  | |  ___/| |\/| |  __| | . ` |  | |   
+    | |_) | |__| || |_ _| |_  | | | |__| | |____   \  /  | |____| |___| |__| | |    | |  | | |____| |\  |  | |   
+    |____/ \____/_____|_____| | | |_____/|______|   \/   |______|______\____/|_|    |_|  |_|______|_| \_|  |_|   
+                              | |                                                                                
+                              |_|               PLAYER LIST
+*/
+
+.playerlist_container {
+    background-color: #1f1e1e;
+    border-radius: 16px;
+    box-shadow: 4px 4px 6px #1f1e1e, -3px -3px 6px #4dcbc2;
+    padding: 20px;
+    margin: 20px auto;
+    width: 20vw;
+    max-width: 25vw;
+    height: 55vh;
+    font-family: 'Roboto';
+    position: fixed;
+    right: 2.5%;
+}
+
+.playerlist_header {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.playerlist_header_left {
+    display: flex;
+    align-items: center;
+}
+
+.playerlist_header_right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1em;
+    color: white;
+}
+
+.players_online_count {
+    margin-left: 10px;
+}
+
+.fa-user {
+    color: #4dcbc2;
+    padding: 2px;
+}
+
+.header_logo {
+    height: 45px;
+    width: 45px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-right: 10px;
+}
+
+.header_name {
+    color: white;
+    font-size: 2vh;
+    font-family: 'Kanit';
+    font-weight: bold;
+}
+
+.role_grid {
+    width: 100%;
+    height: 13.5%;
+    max-height: 13.5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+.role_entry {
+    height: 1vh;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 16px;
+    background-color: #323030;
+    color: white;
+    font-size: 1.4vh;
+}
+
+.role_label, .role_count {
+    margin: 0 px;
+}
+
+.role_entry:last-child {
+    margin-right: 0;
+}
+
+#player_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    height: 59%;
+}
+
+.profile_pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.player_entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.player_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+    min-width: 0;
+    font-family: 'Roboto';
+}
+
+.player_info:nth-child(1) { width: 10%; } /* Profile Picture */
+.player_info:nth-child(2) { width: 20%; } /* Name */
+.player_info:nth-child(3) { width: 10%; } /* Role */
+.player_info:nth-child(4) { width: 20%; } /* Job */
+.player_info:nth-child(5) { width: 10%; } /* Ping */
+.player_info:nth-child(6) { width: 0%; } /* ID */
+
+.player_label {
+    font-size: 0.7em; /* Smaller text for labels */
+    color: #888; /* Lighter color for labels for differentiation */
+}
+
+.player_value {
+    font-size: 0.8em;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#player_list li {
+    display: flex;
+    padding: 10px;
+    background-color: #323030;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .playerlist_container {
+        width: 95%;
+    }
+}
